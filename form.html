@@ -3,32 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="ba.js"></script>
     <link rel="stylesheet" href="style stuff.css">
+
 </head>
 <body>
-
 <div class="popup">
     <div class="form">
-        <h2>Log in</h2>
-        <div class="form-element">
-            <label for="taikhoan">Account Name</label>
-            <input type="text" id="taikhoan" placeholder="Enter your account name">
-        </div>
-        <div class="form-element">
-            <label for="matkhau">Account Password</label>
-            <input type="password" id="matkhau" placeholder="Enter your password">
-        </div>
-        <div class="form-element">
-            <input type="checkbox" id="remember-me">
-            <label for="remember-me">Remember me</label>
-        </div>
-        <div class="form-element">
-            <button><a href="Web%20selling%20stuff.html">Sign in  <span style="color: #f0f0f0">aaaaaaaaaaaaaaaa</span>               </a></button>
-        </div>
-        <div class="form-element">
-            <a href="#">Forgot password ?</a>
-        </div>
+        <h2 style=" color: #f0f0f0">Log in</h2>
+        <form class="form" id="form">
+            <div class="form-element">
+                <label for="taikhoan">Account Name</label>
+                <input type="text" id="taikhoan" placeholder="Enter your account name">
+                <span class="form-message"></span>
+            </div>
+
+            <div class="form-element">
+                <label for="phone">Phone number</label>
+                <input type="text" id="phone" placeholder="Enter your phone" maxlength="10" minlength="10">
+                <span class="form-message"></span>
+            </div>
+            <div class="form-element">
+                <label for="Email">Email</label>
+                <input type="text" id="Email" placeholder="Enter your gmail">
+                <span class="form-message"></span>
+            </div>
+
+
+
+            <div class="form-element">
+                <label for="address">Address</label>
+                <input type="text" id="address" placeholder="Enter your address">
+                <span class="form-message"></span>
+            </div>
+
+            <div class="form-element">Gender : </div>
+            <div class="form-element">
+                <input type="radio" class="form-check-input" id="validationFormCheck2" name="radio-stacked" checked required>
+                <label class="form-check-label" for="validationFormCheck2">Male</label>
+            </div>
+            <div class="form-element">
+                <input type="radio" class="form-check-input" id="validationFormCheck3" name="radio-stacked" required>
+                <label class="form-check-label" for="validationFormCheck3">Female</label>
+            </div>
+            <div class="form-element">
+                <input type="radio" class="form-check-input" id="validationFormCheck4" name="radio-stacked" required>
+                <label class="form-check-label" for="validationFormCheck4">Other</label>
+            </div>
+            <div class="form-element">
+                <label for="gender">Confirm your gender</label>
+                <input type="text" id="gender" placeholder="Male / Female / Other">
+                <span class="form-message"></span>
+            </div>
+
+            <br>
+
+            <div class="form-element" >
+                <button><a href="#" style="text-align: center">Sign in  </a></button>
+            </div>
+
+        </form>
     </div>
 </div>
+
+<script src="ba.js"></script>
+
+<script>
+    validator({
+        form:"#form",
+        errorSelector : ".form-message",
+        rules: [
+            validator.isRequired("#taikhoan"),
+            validator.isRequired("#address"),
+            validator.isEmail("#Email"),
+            validator.isPhone("#phone"),
+            validator.isRequired("#gender"),
+        ]
+    });
+</script>
+
 </body>
 </html>
