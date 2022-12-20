@@ -43,3 +43,11 @@ footer{
 .class2 {
     color: black;
 }
+
+.class3{
+    width:30%;
+    text-align: center ;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
